@@ -1,5 +1,10 @@
 package br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api;
 
-public class BeneficiarioResponse {
+import java.util.UUID;
 
+import lombok.Value;
+
+@Value
+public class BeneficiarioResponse {
+	private UUID idBeneficiario;
 }
