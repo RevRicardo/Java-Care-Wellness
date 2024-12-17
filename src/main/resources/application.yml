@@ -1,4 +1,3 @@
 server:
   servlet:
-    cantext-path: /JavaCareWellness/api
-
+      context-path: /JavaCareWellness/api
