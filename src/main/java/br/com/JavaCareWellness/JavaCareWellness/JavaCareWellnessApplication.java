@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class JavaCareWellnessApplication {
+	
+	@GetMapping
+	public String getHomeTeste() {
+		return "Cadastro de beneficiario e seus documentos";
+	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(JavaCareWellnessApplication.class, args);
 	}
