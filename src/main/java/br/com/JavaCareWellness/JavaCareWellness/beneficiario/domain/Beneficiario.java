@@ -38,10 +38,5 @@ public class Beneficiario {
 		this.dataHoraDaInclusao = LocalDateTime.now();
 	}
 
-	public BeneficiarioResponse criaBeneficiario(BeneficiarioRequest beneficiarioRequest) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
     
 }
