@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioRequest;
+import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioResponse;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +36,11 @@ public class Beneficiario {
 		this.telefone = beneficiarioRequest.getTelefone();
 		this.dataNascimento = beneficiarioRequest.getDataNascimento();
 		this.dataHoraDaInclusao = LocalDateTime.now();
+	}
+
+	public BeneficiarioResponse criaBeneficiario(BeneficiarioRequest beneficiarioRequest) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
     
