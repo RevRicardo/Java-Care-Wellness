@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,10 +30,10 @@ public class Beneficiario {
     private LocalDateTime dataHoraDaInclusao;
     private LocalDateTime dataHoraAtualizacao;
     
-	public Beneficiario(@NotBlank String nome, String telefone, LocalDate dataNascimento) {
-		this.nome = nome;
-		this.telefone = telefone;
-		this.dataNascimento = dataNascimento;
+    public Beneficiario(BeneficiarioRequest beneficiarioRequest) {
+		this.nome = beneficiarioRequest.getNome();
+		this.telefone = beneficiarioRequest.getTelefone();
+		this.dataNascimento = beneficiarioRequest.getDataNascimento();
 		this.dataHoraDaInclusao = LocalDateTime.now();
 	}
 
