@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioAlteracaoRequest;
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioDetalhadoResponse;
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioListResponse;
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioRequest;
@@ -54,7 +55,17 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
 		Beneficiario beneficiario = beneficiarioRepository.buscaBeneficiarioAtravesId(idBeneficiario);
 		beneficiarioRepository.deletaBeneficiario(beneficiario);
 		log.info("[finaliza] BeneficiarioApplicationService --> deletaBeneficiarioAtravesId");
+	}
+
+	@Override
+	public void patchAlteracaoBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+		log.info("[iniciar] BeneficiarioApplicationService --> patchAlteracaoBeneficiario");
+		Beneficiario beneficiario = beneficiarioRepository.buscaBeneficiarioAtravesId(idBeneficiario);
+		beneficiario.altera(beneficiarioAlteracaoRequest);
+		beneficiarioRepository.salva(beneficiario);
+		log.info("[finaliza] BeneficiarioApplicationService --> patchAlteracaoBeneficiario");
 		
 	}
+
 
 }
