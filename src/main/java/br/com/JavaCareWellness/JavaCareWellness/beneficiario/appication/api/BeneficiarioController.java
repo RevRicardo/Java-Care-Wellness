@@ -1,6 +1,7 @@
 package br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,5 +32,14 @@ public class BeneficiarioController implements BeneficiarioAPI {
 		log.info("[finaliza] BeneficiarioController --> getTodosBeneficiarios");
 		return beneficiarios;
 	}
+
+	@Override
+	public BeneficiarioDetalhadoResponse getBeneficiarioAtravesId(UUID idBeneficiario) {
+		log.info("[iniciar] BeneficiarioDetalhadoResponse --> getBeneficiarioAtravesId");
+		log.info("[idBeneficiario] {}", idBeneficiario);
+		log.info("[finaliza] BeneficiarioDetalhadoResponse --> getBeneficiarioAtravesId");
+		return null;
+	}
+
 
 }
