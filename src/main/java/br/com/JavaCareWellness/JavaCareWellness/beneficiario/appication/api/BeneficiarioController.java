@@ -1,5 +1,7 @@
 package br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.service.BeneficiarioService;
@@ -20,6 +22,13 @@ public class BeneficiarioController implements BeneficiarioAPI {
 		BeneficiarioResponse beneficiarioCriado = beneficiarioService.criaBeneficiario(beneficiarioRequest);
 		log.info("[finaliza] BeneficiarioController --> postBeneficiario");
 		return beneficiarioCriado;
+	}
+
+	@Override
+	public List<BeneficiarioListResponse> getTodosBeneficiarios() {
+		log.info("[iniciar] BeneficiarioController --> getTodosBeneficiarios");
+		log.info("[finaliza] BeneficiarioController --> getTodosBeneficiarios");
+		return null;
 	}
 
 }
