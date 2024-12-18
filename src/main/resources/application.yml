@@ -1,3 +1,15 @@
 server:
   servlet:
       context-path: /JavaCareWellness/api
+
+spring:
+  datasource:
+      url: jdbc:h2:mem:demodb
+      username: sa
+      passoword:
+       driverClassName: org.h2.Driver
+
+h2:
+   conseole:
+       enabled: true
+       path: /h2-console

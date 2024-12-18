@@ -1,6 +1,7 @@
 package br.com.JavaCareWellness.JavaCareWellness.beneficiario.infra;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -30,6 +31,15 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
 		List<Beneficiario> todosBeneficiarios = beneficiarioSpringDataJPARepository.findAll();
 		log.info("[finaliza] BeneficiarioInfraRepository --> buscaTodosBeneficiarios");
 		return todosBeneficiarios;
+	}
+
+	@Override
+	public Beneficiario buscaBeneficiarioAtravesId(UUID idBeneficiario) {
+		log.info("[iniciar] BeneficiarioInfraRepository --> buscaBeneficiarioAtravesId");
+		Beneficiario beneficiario = beneficiarioSpringDataJPARepository.findByIdBeneficiario(idBeneficiario)
+				.orElseThrow(() -> new RuntimeException("Beneficiário não encontrado!"));
+		log.info("[finaliza] BeneficiarioInfraRepository --> buscaBeneficiarioAtravesId");
+		return beneficiario;
 	}
 
 }
