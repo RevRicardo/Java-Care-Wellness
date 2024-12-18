@@ -26,6 +26,7 @@ public class Beneficiario {
     private UUID idBeneficiario;
     @NotBlank
     private String nome;
+    @Column(unique = true)
     private String telefone;
     private LocalDate dataNascimento;
     private LocalDateTime dataHoraDaInclusao;

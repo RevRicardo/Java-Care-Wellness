@@ -3,6 +3,7 @@ package br.com.JavaCareWellness.JavaCareWellness.beneficiario.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
@@ -22,7 +23,12 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
 	@Override
 	public Beneficiario salva(Beneficiario beneficiario) {
 		log.info("[iniciar] BeneficiarioInfraRepository --> salva");
-		beneficiarioSpringDataJPARepository.save(beneficiario);
+		try {
+			beneficiarioSpringDataJPARepository.save(beneficiario);
+		} catch (DataIntegrityViolationException e) {
+			throw APIException.build(HttpStatus.BAD_REQUEST, "Dados em duplicidade!");
+		}
+//		beneficiarioSpringDataJPARepository.save(beneficiario);
 		log.info("[finaliza] BeneficiarioInfraRepository --> salva");
 		return beneficiario;
 	}
@@ -52,4 +58,15 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
 		
 	}
 
+	
+/**
+ * EXEMPLO tratamento erro para usar nos documentos
+ * try {
+			beneficiarioSpringDataJPARepository.save(beneficiario);
+		} catch (DataIntegrityViolationException e) {
+			throw APIException.build(HttpStatus.BAD_REQUEST, "Dados em duplicidade!");
+		}
+ * 
+ */
+	
 }
