@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioRequest;
-import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioResponse;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -31,12 +31,10 @@ public class Beneficiario {
     private LocalDateTime dataHoraDaInclusao;
     private LocalDateTime dataHoraAtualizacao;
     
-    public Beneficiario(BeneficiarioRequest beneficiarioRequest) {
+    public Beneficiario(@Valid BeneficiarioRequest beneficiarioRequest) {
 		this.nome = beneficiarioRequest.getNome();
 		this.telefone = beneficiarioRequest.getTelefone();
 		this.dataNascimento = beneficiarioRequest.getDataNascimento();
 		this.dataHoraDaInclusao = LocalDateTime.now();
-	}
-
-    
+	}   
 }

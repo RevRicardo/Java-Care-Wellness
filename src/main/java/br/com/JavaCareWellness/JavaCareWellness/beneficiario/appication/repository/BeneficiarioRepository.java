@@ -2,7 +2,6 @@ package br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.reposit
 
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.domain.Beneficiario;
 
-public interface BeneficiaRepository {
+public interface BeneficiarioRepository {
 	Beneficiario salva(Beneficiario beneficiario);
-
 }
