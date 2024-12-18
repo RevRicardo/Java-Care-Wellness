@@ -1,7 +1,10 @@
 package br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioListResponse;
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioRequest;
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioResponse;
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.repository.BeneficiarioRepository;
@@ -25,6 +28,14 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
 		return BeneficiarioResponse.builder()
 				.idBeneficiario(beneficiario.getIdBeneficiario())
 				.build();
+	}
+
+	@Override
+	public List<BeneficiarioListResponse> buscaTodosBeneficiarios() {
+		log.info("[iniciar] BeneficiarioApplicationService --> buscaTodosBeneficiarios");
+		List<Beneficiario> beneficiarios = beneficiarioRepository.buscaTodosBeneficiarios();
+		log.info("[finaliza] BeneficiarioApplicationService --> buscaTodosBeneficiarios");
+		return BeneficiarioListResponse.convert(beneficiarios);
 	}
 
 }
