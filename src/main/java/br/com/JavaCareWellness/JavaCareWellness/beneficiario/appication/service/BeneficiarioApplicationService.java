@@ -48,4 +48,13 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
 		return new BeneficiarioDetalhadoResponse(beneficiario);
 	}
 
+	@Override
+	public void deletaBeneficiarioAtravesId(UUID idBeneficiario) {
+		log.info("[iniciar] BeneficiarioApplicationService --> deletaBeneficiarioAtravesId");
+		beneficiarioRepository.buscaBeneficiarioAtravesId(idBeneficiario);
+//		beneficiarioRepository.deletaBeneficiario(beneficiario);
+		log.info("[finaliza] BeneficiarioApplicationService --> deletaBeneficiarioAtravesId");
+		
+	}
+
 }
