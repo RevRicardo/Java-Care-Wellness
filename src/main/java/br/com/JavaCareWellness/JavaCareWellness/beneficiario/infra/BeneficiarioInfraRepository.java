@@ -3,10 +3,12 @@ package br.com.JavaCareWellness.JavaCareWellness.beneficiario.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.repository.BeneficiarioRepository;
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.domain.Beneficiario;
+import br.com.JavaCareWellness.JavaCareWellness.hendler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -37,7 +39,7 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
 	public Beneficiario buscaBeneficiarioAtravesId(UUID idBeneficiario) {
 		log.info("[iniciar] BeneficiarioInfraRepository --> buscaBeneficiarioAtravesId");
 		Beneficiario beneficiario = beneficiarioSpringDataJPARepository.findByIdBeneficiario(idBeneficiario)
-				.orElseThrow(() -> new RuntimeException("Beneficiário não encontrado!"));
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Esse beneficiario não existe!"));
 		log.info("[finaliza] BeneficiarioInfraRepository --> buscaBeneficiarioAtravesId");
 		return beneficiario;
 	}
