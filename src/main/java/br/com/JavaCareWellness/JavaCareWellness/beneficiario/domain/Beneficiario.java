@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Beneficiario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID idBeneficiario;
     @NotBlank
