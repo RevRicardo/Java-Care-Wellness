@@ -37,8 +37,9 @@ public class BeneficiarioController implements BeneficiarioAPI {
 	public BeneficiarioDetalhadoResponse getBeneficiarioAtravesId(UUID idBeneficiario) {
 		log.info("[iniciar] BeneficiarioDetalhadoResponse --> getBeneficiarioAtravesId");
 		log.info("[idBeneficiario] {}", idBeneficiario);
+		BeneficiarioDetalhadoResponse BeneficiarioDetalhado = beneficiarioService.buscaBeneficiarioAtravesId(idBeneficiario);
 		log.info("[finaliza] BeneficiarioDetalhadoResponse --> getBeneficiarioAtravesId");
-		return null;
+		return BeneficiarioDetalhado;
 	}
 
 
