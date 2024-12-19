@@ -22,14 +22,12 @@ import lombok.NoArgsConstructor;
 public class Documento { 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO) 
 	@Column(columnDefinition = "uuid", name = "idDocumento", updatable = false, unique = true, nullable = false) 
-	
 	private UUID idDocumento; 
-	@NotNull 
+	@NotNull  
 	@Enumerated(EnumType.STRING) 
 	private TipoDocumento tipoDocumento; 
 	@NotBlank @Column(unique = true) 
 	private String numero; 
-	private LocalDateTime dataHoraDaInclusao; 
-	private LocalDateTime dataHoraAtualizacao; 
-
+    private LocalDateTime dataHoraDaInclusao;
+    private LocalDateTime dataHoraAtualizacao;
 }
