@@ -39,8 +39,16 @@ public class DocumentoController implements DocumentoAPI {
 	public DocumentoBeneficiarioDetalheResponse getDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento) {
 		log.info("[inicia] DocumentoController -->  getDocumentoDoBeneficiarioComId");
 		log.info("[idBeneficiario] {} - [idDocumento] {}", idBeneficiario, idDocumento);
-		DocumentoBeneficiarioDetalheResponse documentos = documentoService.buscaDocumentoDoBeneficiarioComId(idBeneficiario, idDocumento);
+		DocumentoBeneficiarioDetalheResponse documento = documentoService.buscaDocumentoDoBeneficiarioComId(idBeneficiario, idDocumento);
 		log.info("[finaliza] DocumentoController -->  getDocumentoDoBeneficiarioComId");
-		return null;
+		return documento;
+	}
+
+	@Override
+	public void deleteDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento) {
+		log.info("[inicia] DocumentoController -->  deleteDocumentoDoBeneficiarioComId");
+		log.info("[idBeneficiario] {} - [idDocumento] {}", idBeneficiario, idDocumento);
+		documentoService.deletaDocumentoDoBeneficiarioComId(idBeneficiario, idDocumento);
+		log.info("[finaliza] DocumentoController -->  deleteDocumentoDoBeneficiarioComId");
 	}
 }

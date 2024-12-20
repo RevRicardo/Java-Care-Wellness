@@ -46,4 +46,10 @@ public class DocumentoApplicationService implements DocumentoService {
 		log.info("[finaliza] DocumentoApplicationService --> buscaDocumentoDoBeneficiarioComId");
 		return new DocumentoBeneficiarioDetalheResponse(documento);
 	}
+	@Override
+	public void deletaDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento) {
+		log.info("[inicia] DocumentoApplicationService --> deletaDocumentoDoBeneficiarioComId");
+		log.info("[finaliza] DocumentoApplicationService --> deletaDocumentoDoBeneficiarioComId");
+		
+	}
 }

@@ -13,5 +13,6 @@ public interface DocumentoService {
 	DocumentoResponse criaDocumento(UUID idBeneficiario, @Valid DocumentoRequest documentoRequest);
 	List<DocumentoBeneficiarioListResponse> buscaDocumentosDoBeneficiarioComId(UUID idBeneficiario);
 	DocumentoBeneficiarioDetalheResponse buscaDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento);
-
+	void deletaDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento);
+	
 }

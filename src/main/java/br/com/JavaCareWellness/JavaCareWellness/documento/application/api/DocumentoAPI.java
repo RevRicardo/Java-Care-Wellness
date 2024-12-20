@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioDetalhadoResponse;
 import jakarta.validation.Valid;
 
 @RestController
@@ -32,19 +32,7 @@ public interface DocumentoAPI {
 	DocumentoBeneficiarioDetalheResponse getDocumentoDoBeneficiarioComId(@PathVariable UUID idBeneficiario, 
 			@PathVariable UUID idDocumento);
 
-	
-	/**
-	@GetMapping(value = "/{idBeneficiario}")
-	@ResponseStatus(code = HttpStatus.OK)
-	BeneficiarioDetalhadoResponse getBeneficiarioAtravesId(@PathVariable UUID idBeneficiario);
-	
-	@DeleteMapping(value = "/{idBeneficiario}")
+	@DeleteMapping(value = "{idDocumento}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	void deletaBeneficiarioAtravesId(@PathVariable UUID idBeneficiario);
-	
-	@PatchMapping(value = "/{idBeneficiario}")
-	@ResponseStatus(code = HttpStatus.CREATED)
-	void patchAlteracaoBeneficiario(@PathVariable UUID idBeneficiario, 
-			@Valid @RequestBody BeneficiarioAlteracaoRequest BeneficiarioAlteracaoRequest);
-*/
+	void deleteDocumentoDoBeneficiarioComId(@PathVariable UUID idBeneficiario, @PathVariable UUID idDocumento);
 }
