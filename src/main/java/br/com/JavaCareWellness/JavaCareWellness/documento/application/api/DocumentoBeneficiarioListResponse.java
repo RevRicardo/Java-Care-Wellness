@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 import br.com.JavaCareWellness.JavaCareWellness.documento.domain.Documento;
 import br.com.JavaCareWellness.JavaCareWellness.documento.domain.TipoDocumento;
+import lombok.Getter;
 import lombok.Value;
 
 @Value
@@ -19,7 +19,7 @@ public class DocumentoBeneficiarioListResponse {
     
 public static List<DocumentoBeneficiarioListResponse> converte(List<Documento> documentosDoBeneficiario) { 
 	return documentosDoBeneficiario.stream() 
-			.map(documento -> new DocumentoBeneficiarioListResponse(documento, beneficiario))
+			.map(DocumentoBeneficiarioListResponse::new)
 			.collect(Collectors.toList()); }
 
 	public DocumentoBeneficiarioListResponse(Documento documento) {
