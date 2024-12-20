@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.api.BeneficiarioDetalhadoResponse;
 import jakarta.validation.Valid;
 
 @RestController
@@ -26,7 +27,13 @@ public interface DocumentoAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	List<DocumentoBeneficiarioListResponse> getDocumentosDoBeneficiariosId(@PathVariable UUID idBeneficiario);
 
-/**
+	@GetMapping(value = "{idDocumento}")
+	@ResponseStatus(code = HttpStatus.OK)
+	DocumentoDetalheResponse getDocumentoDoBeneficiario(@PathVariable UUID idBeneficiario, 
+			@PathVariable UUID idDocumento);
+
+	
+	/**
 	@GetMapping(value = "/{idBeneficiario}")
 	@ResponseStatus(code = HttpStatus.OK)
 	BeneficiarioDetalhadoResponse getBeneficiarioAtravesId(@PathVariable UUID idBeneficiario);
