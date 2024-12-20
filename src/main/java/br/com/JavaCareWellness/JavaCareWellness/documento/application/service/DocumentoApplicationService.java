@@ -41,7 +41,9 @@ public class DocumentoApplicationService implements DocumentoService {
 	public DocumentoBeneficiarioDetalheResponse buscaDocumentoDoBeneficiarioComId(UUID idBeneficiario,
 			UUID idDocumento) {
 		log.info("[inicia] DocumentoApplicationService --> buscaDocumentoDoBeneficiarioComId");
+		beneficiarioService.buscaBeneficiarioAtravesId(idBeneficiario);
+		Documento documento = documentoRepository.buscaDocumentoPeloId(idDocumento);
 		log.info("[finaliza] DocumentoApplicationService --> buscaDocumentoDoBeneficiarioComId");
-		return null;
+		return new DocumentoBeneficiarioDetalheResponse(documento);
 	}
 }
