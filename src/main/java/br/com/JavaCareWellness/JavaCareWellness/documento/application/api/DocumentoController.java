@@ -27,19 +27,20 @@ public class DocumentoController implements DocumentoAPI {
 	}
 
 	@Override
-	public List<DocumentoBeneficiarioListResponse> getDocumentosDoBeneficiariosId(UUID idBeneficiario) {
-		log.info("[inicia] DocumentoController -->  getDocumentosDoBeneficiariosId");
+	public List<DocumentoBeneficiarioListResponse> getDocumentosDoBeneficiarioComId(UUID idBeneficiario) {
+		log.info("[inicia] DocumentoController -->  getDocumentosDoBeneficiarioComId");
 		log.info("[idBeneficiario] {}, idBeneficiario");
 		List<DocumentoBeneficiarioListResponse> documentosDoBeneficiario = documentoService.buscaDocumentosDoBeneficiarioComId(idBeneficiario);
-		log.info("[finaliza] DocumentoController -->  getDocumentosDoBeneficiariosId");
+		log.info("[finaliza] DocumentoController -->  getDocumentosDoBeneficiarioComId");
 		return documentosDoBeneficiario;
 	}
 
 	@Override
-	public DocumentoDetalheResponse getDocumentoDoBeneficiario(UUID idBeneficiario, UUID idDocumento) {
-		log.info("[inicia] DocumentoController -->  getDocumentoDoBeneficiario");
+	public DocumentoBeneficiarioDetalheResponse getDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento) {
+		log.info("[inicia] DocumentoController -->  getDocumentoDoBeneficiarioComId");
 		log.info("[idBeneficiario] {} - [idDocumento] {}", idBeneficiario, idDocumento);
-		log.info("[finaliza] DocumentoController -->  getDocumentoDoBeneficiario");
+		DocumentoBeneficiarioDetalheResponse documentos = documentoService.buscaDocumentoDoBeneficiarioComId(idBeneficiario, idDocumento);
+		log.info("[finaliza] DocumentoController -->  getDocumentoDoBeneficiarioComId");
 		return null;
 	}
 }

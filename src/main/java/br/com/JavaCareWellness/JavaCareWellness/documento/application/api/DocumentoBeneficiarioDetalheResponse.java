@@ -6,7 +6,7 @@ import br.com.JavaCareWellness.JavaCareWellness.documento.domain.TipoDocumento;
 import lombok.Value;
 
 @Value
-public class DocumentoDetalheResponse {
+public class DocumentoBeneficiarioDetalheResponse {
 	private UUID idDocumento;
 	private TipoDocumento tipoDocumento; 
 	private String numero;

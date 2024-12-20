@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import br.com.JavaCareWellness.JavaCareWellness.beneficiario.appication.service.BeneficiarioService;
+import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoBeneficiarioDetalheResponse;
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoBeneficiarioListResponse;
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoRequest;
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoResponse;
@@ -35,5 +36,12 @@ public class DocumentoApplicationService implements DocumentoService {
 		List<Documento> documentosDoBeneficiario = documentoRepository.buscaDocumentosDoBeneficiarioComId(idBeneficiario);
 		log.info("[finaliza] DocumentoApplicationService --> buscaDocumentosDoBeneficiarioComId");
 		return DocumentoBeneficiarioListResponse.converte(documentosDoBeneficiario);
+	}
+	@Override
+	public DocumentoBeneficiarioDetalheResponse buscaDocumentoDoBeneficiarioComId(UUID idBeneficiario,
+			UUID idDocumento) {
+		log.info("[inicia] DocumentoApplicationService --> buscaDocumentoDoBeneficiarioComId");
+		log.info("[finaliza] DocumentoApplicationService --> buscaDocumentoDoBeneficiarioComId");
+		return null;
 	}
 }
