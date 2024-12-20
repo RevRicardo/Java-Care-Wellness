@@ -6,7 +6,6 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.service.DocumentoService;
-import br.com.JavaCareWellness.JavaCareWellness.documento.domain.Documento;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
