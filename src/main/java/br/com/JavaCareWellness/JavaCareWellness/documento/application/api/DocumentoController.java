@@ -31,8 +31,8 @@ public class DocumentoController implements DocumentoAPI {
 	public List<DocumentoBeneficiarioListResponse> getDocumentosDoBeneficiariosId(UUID idBeneficiario) {
 		log.info("[inicia] DocumentoController -->  getDocumentosDoBeneficiariosId");
 		log.info("[idBeneficiario] {}, idBeneficiario");
+		List<DocumentoBeneficiarioListResponse> documentosDoBeneficiario = documentoService.buscaDocumentosDoBeneficiarioComId(idBeneficiario);
 		log.info("[finaliza] DocumentoController -->  getDocumentosDoBeneficiariosId");
-
-		return null;
+		return documentosDoBeneficiario;
 	}
 }
