@@ -20,7 +20,7 @@ import jakarta.validation.Valid;
 public interface DocumentoAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	DocumentoResponse postDocumento(@PathVariable UUID idBeneficiario,
+	DocumentoResponse postDocumento(@PathVariable UUID idBeneficiario,  
 			@Valid @RequestBody DocumentoRequest documentoRequest);
 	
 	@GetMapping

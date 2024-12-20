@@ -4,11 +4,9 @@ import java.util.UUID;
 
 import br.com.JavaCareWellness.JavaCareWellness.documento.domain.Documento;
 import br.com.JavaCareWellness.JavaCareWellness.documento.domain.TipoDocumento;
-import lombok.Getter;
 import lombok.Value;
 
 @Value
-@Getter
 public class DocumentoBeneficiarioDetalheResponse {
 
 	private UUID idDocumento;

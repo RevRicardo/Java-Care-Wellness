@@ -49,6 +49,9 @@ public class DocumentoApplicationService implements DocumentoService {
 	@Override
 	public void deletaDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento) {
 		log.info("[inicia] DocumentoApplicationService --> deletaDocumentoDoBeneficiarioComId");
+		beneficiarioService.buscaBeneficiarioAtravesId(idBeneficiario);
+		Documento documento = documentoRepository.buscaDocumentoPeloId(idDocumento);
+		documentoRepository.deletaDocumento(documento); 
 		log.info("[finaliza] DocumentoApplicationService --> deletaDocumentoDoBeneficiarioComId");
 		
 	}

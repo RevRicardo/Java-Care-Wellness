@@ -6,11 +6,9 @@ import java.util.stream.Collectors;
 
 import br.com.JavaCareWellness.JavaCareWellness.documento.domain.Documento;
 import br.com.JavaCareWellness.JavaCareWellness.documento.domain.TipoDocumento;
-import lombok.Getter;
 import lombok.Value;
 
 @Value
-@Getter
 public class DocumentoBeneficiarioListResponse {
     
 	private TipoDocumento tipoDocumento; 

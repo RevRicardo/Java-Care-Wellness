@@ -14,13 +14,12 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RequiredArgsConstructor
 public class DocumentoController implements DocumentoAPI {
-
 	private final DocumentoService documentoService;
 
 	@Override
 	public DocumentoResponse postDocumento(UUID idBeneficiario, @Valid DocumentoRequest documentoRequest) {
 		log.info("[inicia] DocumentoController -->  postDocumento");
-		log.info("[idBeneficiario] {}, idBeneficiario");
+		log.info("[idBeneficiario] {}", idBeneficiario);
 		DocumentoResponse documento = documentoService.criaDocumento(idBeneficiario, documentoRequest);
 		log.info("[finaliza] DocumentoController -->  postDocumento");
 		return documento;
