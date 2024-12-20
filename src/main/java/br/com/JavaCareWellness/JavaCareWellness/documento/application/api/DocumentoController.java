@@ -1,5 +1,6 @@
 package br.com.JavaCareWellness.JavaCareWellness.documento.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +25,14 @@ public class DocumentoController implements DocumentoAPI {
 		DocumentoResponse documento = documentoService.criaDocumento(idBeneficiario, documentoRequest);
 		log.info("[finaliza] DocumentoController -->  postDocumento");
 		return documento;
+	}
+
+	@Override
+	public List<DocumentoBeneficiarioListResponse> getDocumentosDoBeneficiariosId(UUID idBeneficiario) {
+		log.info("[inicia] DocumentoController -->  getDocumentosDoBeneficiariosId");
+		log.info("[idBeneficiario] {}, idBeneficiario");
+		log.info("[finaliza] DocumentoController -->  getDocumentosDoBeneficiariosId");
+
+		return null;
 	}
 }
