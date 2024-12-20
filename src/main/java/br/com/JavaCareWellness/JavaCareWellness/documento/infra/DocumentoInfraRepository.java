@@ -1,5 +1,8 @@
 package br.com.JavaCareWellness.JavaCareWellness.documento.infra;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.service.DocumentoRepository;
@@ -19,5 +22,12 @@ public class DocumentoInfraRepository implements DocumentoRepository {
 		documentoSpringDataJPARepository.save(documento);
 		log.info("[finaliza] DocumentoInfraRepository --> salvaDocumento");
 		return documento;
+	}
+
+	@Override
+	public List<Documento> buscaDocumentosDoBeneficiarioComId(UUID idBeneficiario) {
+		log.info("[inicia] DocumentoInfraRepository --> buscaDocumentosDoBeneficiarioComId");
+		log.info("[finaliza] DocumentoInfraRepository --> buscaDocumentosDoBeneficiarioComId");
+		return null;
 	}
 }

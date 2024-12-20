@@ -32,7 +32,8 @@ public class DocumentoApplicationService implements DocumentoService {
 	public List<DocumentoBeneficiarioListResponse> buscaDocumentosDoBeneficiarioComId(UUID idBeneficiario) {
 		log.info("[inicia] DocumentoApplicationService --> buscaDocumentosDoBeneficiarioComId");
 		beneficiarioService.buscaBeneficiarioAtravesId(idBeneficiario);
+		List<Documento> documentosDoBeneficiario = documentoRepository.buscaDocumentosDoBeneficiarioComId(idBeneficiario);
 		log.info("[finaliza] DocumentoApplicationService --> buscaDocumentosDoBeneficiarioComId");
-		return null;
+		return DocumentoBeneficiarioListResponse.converte(documentosDoBeneficiario);
 	}
 }
