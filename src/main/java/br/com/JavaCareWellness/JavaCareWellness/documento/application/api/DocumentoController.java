@@ -18,8 +18,7 @@ public class DocumentoController implements DocumentoAPI {
 	private final DocumentoService documentoService;
 
 	@Override
-	public DocumentoResponse postDocumento(UUID idBeneficiario, 
-			@Valid DocumentoRequest documentoRequest) {
+	public DocumentoResponse postDocumento(UUID idBeneficiario, @Valid DocumentoRequest documentoRequest) {
 		log.info("[inicia] DocumentoController -->  postDocumento");
 		log.info("[idBeneficiario] {}, idBeneficiario");
 		DocumentoResponse documento = documentoService.criaDocumento(idBeneficiario, documentoRequest);
