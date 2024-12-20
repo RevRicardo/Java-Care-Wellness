@@ -39,7 +39,6 @@ public class DocumentoInfraRepository implements DocumentoRepository {
 		log.info("[inicia] DocumentoInfraRepository --> buscaDocumentoPeloId");
 		var documento = documentoSpringDataJPARepository.findById(idDocumento)
 				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Documento não existe para o IdDocumento = " + idDocumento));
-		
 		log.info("[finaliza] DocumentoInfraRepository --> buscaDocumentoPeloId");
 		return documento;
 	}
