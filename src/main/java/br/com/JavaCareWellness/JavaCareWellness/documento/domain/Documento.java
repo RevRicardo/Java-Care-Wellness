@@ -3,6 +3,7 @@ package br.com.JavaCareWellness.JavaCareWellness.documento.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoAlteracaoRequest;
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,5 +42,12 @@ public class Documento {
 		this.tipoDocumento = documentoRequest.getTipoDocumento();
 		this.numero = documentoRequest.getNumero();
 		this.dataHoraDaInclusao = LocalDateTime.now();
+	}
+
+	public void altera(DocumentoAlteracaoRequest documentoAlteracaoRequest) {
+		this.tipoDocumento = documentoAlteracaoRequest.getTipoDocumento();
+		this.numero = documentoAlteracaoRequest.getNumero();
+		this.dataHoraAtualizacao = LocalDateTime.now();
+		
 	}
 }

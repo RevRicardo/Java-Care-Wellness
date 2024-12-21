@@ -3,6 +3,7 @@ package br.com.JavaCareWellness.JavaCareWellness.documento.application.service;
 import java.util.List;
 import java.util.UUID;
 
+import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoAlteracaoRequest;
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoBeneficiarioDetalheResponse;
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoBeneficiarioListResponse;
 import br.com.JavaCareWellness.JavaCareWellness.documento.application.api.DocumentoRequest;
@@ -14,5 +15,6 @@ public interface DocumentoService {
 	List<DocumentoBeneficiarioListResponse> buscaDocumentosDoBeneficiarioComId(UUID idBeneficiario);
 	DocumentoBeneficiarioDetalheResponse buscaDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento);
 	void deletaDocumentoDoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento);
-	
+	void alteraDocumentoDoClienteComId(UUID idBeneficiario, UUID idDocumento, 
+			DocumentoAlteracaoRequest documentoAlteracaoRequest);
 }

@@ -52,12 +52,11 @@ public class DocumentoController implements DocumentoAPI {
 	}
 
 	@Override
-	public DocumentoResponse patchtDocumento(UUID idBeneficiario, UUID idDocumento,
+	public void patchtDocumento(UUID idBeneficiario, UUID idDocumento,
 			@Valid DocumentoAlteracaoRequest documentoAlteracaoRequest) {
 		log.info("[inicia] DocumentoController -->  patchtDocumento");
 		log.info("[idBeneficiario] {} - [idDocumento] {}", idBeneficiario, idDocumento);
+		documentoService.alteraDocumentoDoClienteComId(idBeneficiario, idDocumento, documentoAlteracaoRequest);
 		log.info("[inicia] DocumentoController -->  patchtDocumento");
-
-		return null;
 	}
 }
