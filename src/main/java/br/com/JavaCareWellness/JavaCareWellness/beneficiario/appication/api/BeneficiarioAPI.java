@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
-
 @RestController
 @RequestMapping("/beneficiario/v1.0")
 public interface BeneficiarioAPI {

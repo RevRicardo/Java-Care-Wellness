@@ -1,6 +1,6 @@
 server:
   servlet:
-      context-path: /JavaCareWellness/api
+      context-path: /javacarewellness/api
 
 spring:
   datasource:
